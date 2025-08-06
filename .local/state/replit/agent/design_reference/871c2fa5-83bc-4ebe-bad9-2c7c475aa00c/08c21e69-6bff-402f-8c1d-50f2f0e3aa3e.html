@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaimin Somani - Cybersecurity Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'glass': 'rgba(255, 255, 255, 0.1)',
+                        'glass-border': 'rgba(255, 255, 255, 0.2)',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.5), transparent);
+        }
+        .masonry-item {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+        .modal-backdrop {
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-inter">
+    
+    <!-- @COMPONENT: Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold">
+                    <span data-bind="site.title">Jaimin Somani</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-white/80 transition-colors duration-300">Home</a>
+                    <a href="#about" class="hover:text-white/80 transition-colors duration-300">About</a>
+                    <a href="#gallery" class="hover:text-white/80 transition-colors duration-300">Gallery</a>
+                    <a href="#blog" class="hover:text-white/80 transition-colors duration-300">Blog</a>
+                    <a href="#contact" class="hover:text-white/80 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="text-center z-10">
+            <div class="mb-6">
+                <h1 class="text-6xl md:text-8xl font-bold mb-4 leading-tight">
+                    <span data-bind="user.name">Jaimin</span><br>
+                    <span data-bind="user.surname" class="text-white/80">Somani</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/70 mb-8" data-bind="user.title">
+                    Cybersecurity Professional & Trainer
+                </p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <button class="glass-effect px-8 py-3 rounded-lg glow-button transition-all duration-300 hover:bg-white/10" data-event="click:viewPortfolio">
+                    View Portfolio
+                </button>
+                <button class="border border-white/30 px-8 py-3 rounded-lg glow-button transition-all duration-300 hover:bg-white/5" data-event="click:downloadCV">
+                    Download CV
+                </button>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div class="glass-effect p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2" data-bind="stats.experience">8+</div>
+                    <div class="text-white/70">Years Experience</div>
+                </div>
+                <div class="glass-effect p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2" data-bind="stats.clients">500+</div>
+                    <div class="text-white/70">Clients Served</div>
+                </div>
+                <div class="glass-effect p-6 rounded-lg">
+                    <div class="text-3xl font-bold mb-2" data-bind="stats.trainings">150+</div>
+                    <div class="text-white/70">Training Sessions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="grid grid-cols-12 gap-4 h-full">
+                <!-- @MAP: Array(12).fill().map((_, i) => ( -->
+                <div class="border-r border-white/20 h-full"></div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    Cybersecurity expert with extensive experience in protecting organizations from digital threats and training the next generation of security professionals.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Timeline -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Professional Journey</h3>
+                    <div class="relative">
+                        <div class="absolute left-4 top-0 bottom-0 w-px timeline-line"></div>
+                        
+                        <!-- @MAP: experiences.map(experience => ( -->
+                        <div class="relative flex items-start mb-8" data-mock="true">
+                            <div class="absolute left-0 w-8 h-8 bg-white rounded-full border-4 border-black flex items-center justify-center">
+                                <div class="w-2 h-2 bg-black rounded-full"></div>
+                            </div>
+                            <div class="ml-12 glass-effect p-6 rounded-lg">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-lg font-semibold">Senior Security Consultant</h4>
+                                    <span class="text-sm text-white/60">2020 - Present</span>
+                                </div>
+                                <p class="text-white/70 mb-2">Cyber Defense Solutions Inc.</p>
+                                <p class="text-sm text-white/60">Led penetration testing and security assessments for Fortune 500 companies.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start mb-8" data-mock="true">
+                            <div class="absolute left-0 w-8 h-8 bg-white rounded-full border-4 border-black flex items-center justify-center">
+                                <div class="w-2 h-2 bg-black rounded-full"></div>
+                            </div>
+                            <div class="ml-12 glass-effect p-6 rounded-lg">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-lg font-semibold">Security Analyst</h4>
+                                    <span class="text-sm text-white/60">2018 - 2020</span>
+                                </div>
+                                <p class="text-white/70 mb-2">SecureNet Technologies</p>
+                                <p class="text-sm text-white/60">Implemented security protocols and conducted vulnerability assessments.</p>
+                            </div>
+                        </div>
+
+                        <div class="relative flex items-start mb-8" data-mock="true">
+                            <div class="absolute left-0 w-8 h-8 bg-white rounded-full border-4 border-black flex items-center justify-center">
+                                <div class="w-2 h-2 bg-black rounded-full"></div>
+                            </div>
+                            <div class="ml-12 glass-effect p-6 rounded-lg">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h4 class="text-lg font-semibold">IT Security Specialist</h4>
+                                    <span class="text-sm text-white/60">2016 - 2018</span>
+                                </div>
+                                <p class="text-white/70 mb-2">TechGuard Solutions</p>
+                                <p class="text-sm text-white/60">Managed firewall configurations and incident response procedures.</p>
+                            </div>
+                        </div>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+
+                <!-- Skills & Certifications -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Skills & Certifications</h3>
+                    
+                    <div class="mb-8">
+                        <h4 class="text-lg font-semibold mb-4">Core Skills</h4>
+                        <div class="grid grid-cols-2 gap-3">
+                            <!-- @MAP: skills.map(skill => ( -->
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Penetration Testing
+                            </div>
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Incident Response
+                            </div>
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Risk Assessment
+                            </div>
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Security Auditing
+                            </div>
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Malware Analysis
+                            </div>
+                            <div class="glass-effect p-3 rounded-lg text-center text-sm" data-mock="true">
+                                Network Security
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Certifications</h4>
+                        <div class="space-y-3">
+                            <!-- @MAP: certifications.map(cert => ( -->
+                            <div class="glass-effect p-4 rounded-lg flex items-center" data-mock="true">
+                                <i class="fas fa-certificate text-white/70 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">CISSP - Certified Information Systems Security Professional</div>
+                                    <div class="text-sm text-white/60">Valid until 2025</div>
+                                </div>
+                            </div>
+                            <div class="glass-effect p-4 rounded-lg flex items-center" data-mock="true">
+                                <i class="fas fa-certificate text-white/70 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">CEH - Certified Ethical Hacker</div>
+                                    <div class="text-sm text-white/60">Valid until 2024</div>
+                                </div>
+                            </div>
+                            <div class="glass-effect p-4 rounded-lg flex items-center" data-mock="true">
+                                <i class="fas fa-certificate text-white/70 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">CISM - Certified Information Security Manager</div>
+                                    <div class="text-sm text-white/60">Valid until 2025</div>
+                                </div>
+                            </div>
+                            <!-- @END_MAP )) -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: About Section -->
+
+    <!-- @COMPONENT: Gallery Section -->
+    <section id="gallery" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Gallery</h2>
+                <p class="text-xl text-white/70 mb-8">Workshops, conferences, and training sessions</p>
+                
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="glass-effect px-6 py-2 rounded-lg glow-button transition-all duration-300 bg-white/10" data-filter="all">
+                        All
+                    </button>
+                    <button class="glass-effect px-6 py-2 rounded-lg glow-button transition-all duration-300" data-filter="workshops">
+                        Workshops
+                    </button>
+                    <button class="glass-effect px-6 py-2 rounded-lg glow-button transition-all duration-300" data-filter="conferences">
+                        Conferences
+                    </button>
+                    <button class="glass-effect px-6 py-2 rounded-lg glow-button transition-all duration-300" data-filter="training">
+                        Training
+                    </button>
+                </div>
+            </div>
+
+            <!-- Masonry Gallery Grid -->
+            <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6">
+                <!-- @MAP: galleryItems.map(item => ( -->
+                <!-- Professional cybersecurity workshop session with participants -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="workshops" data-modal-trigger="gallery-1">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Cybersecurity workshop session" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">Enterprise Security Workshop</h4>
+                        <p class="text-sm text-white/60">Advanced threat detection training</p>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity conference presentation on stage -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="conferences" data-modal-trigger="gallery-2">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="Conference presentation" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">CyberSec Conference 2023</h4>
+                        <p class="text-sm text-white/60">Keynote on emerging threats</p>
+                    </div>
+                </div>
+
+                <!-- IT training classroom with computers and students -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="training" data-modal-trigger="gallery-3">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=700" alt="IT training classroom" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">Corporate Training Session</h4>
+                        <p class="text-sm text-white/60">Security awareness program</p>
+                    </div>
+                </div>
+
+                <!-- Group of professionals in cybersecurity meeting -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="workshops" data-modal-trigger="gallery-4">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Professional cybersecurity meeting" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">Security Assessment Workshop</h4>
+                        <p class="text-sm text-white/60">Hands-on vulnerability testing</p>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity expert presenting to audience -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="conferences" data-modal-trigger="gallery-5">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=500" alt="Expert presenting to audience" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">Industry Summit 2023</h4>
+                        <p class="text-sm text-white/60">Future of cybersecurity panel</p>
+                    </div>
+                </div>
+
+                <!-- Professional certification ceremony -->
+                <div class="masonry-item mb-6 glass-effect rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-300" data-category="training" data-modal-trigger="gallery-6">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" alt="Professional certification ceremony" class="w-full h-auto" />
+                    <div class="p-4">
+                        <h4 class="font-semibold mb-2">Certification Program</h4>
+                        <p class="text-sm text-white/60">Graduation ceremony for security analysts</p>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Gallery Section -->
+
+    <!-- @COMPONENT: Blog Section -->
+    <section id="blog" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Latest Blog Posts</h2>
+                <p class="text-xl text-white/70 mb-8">Insights and updates from the cybersecurity world</p>
+                
+                <!-- Blog Filter Tags -->
+                <div class="flex flex-wrap justify-center gap-3 mb-12">
+                    <button class="glass-effect px-4 py-2 rounded-full text-sm glow-button transition-all duration-300 bg-white/10" data-tag="all">
+                        All Posts
+                    </button>
+                    <button class="glass-effect px-4 py-2 rounded-full text-sm glow-button transition-all duration-300" data-tag="security">
+                        Security
+                    </button>
+                    <button class="glass-effect px-4 py-2 rounded-full text-sm glow-button transition-all duration-300" data-tag="tutorials">
+                        Tutorials
+                    </button>
+                    <button class="glass-effect px-4 py-2 rounded-full text-sm glow-button transition-all duration-300" data-tag="news">
+                        Industry News
+                    </button>
+                </div>
+            </div>
+
+            <!-- Blog Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: blogPosts.map(post => ( -->
+                <article class="glass-effect rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer" data-mock="true" data-tags="security">
+                    <!-- Modern office building representing cybersecurity infrastructure -->
+                    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Modern cybersecurity infrastructure" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Security</span>
+                            <span class="text-xs text-white/60 ml-3">Dec 15, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Zero Trust Architecture: Implementation Guide</h3>
+                        <p class="text-white/70 text-sm mb-4">Learn how to implement zero trust security principles in your organization with practical steps and best practices.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-white/60">5 min read</span>
+                            <i class="fas fa-arrow-right text-white/60"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-effect rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer" data-mock="true" data-tags="tutorials">
+                    <!-- Digital lock and security concept visualization -->
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Digital security and lock concept" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Tutorial</span>
+                            <span class="text-xs text-white/60 ml-3">Dec 10, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Advanced Penetration Testing Techniques</h3>
+                        <p class="text-white/70 text-sm mb-4">Master advanced penetration testing methodologies with hands-on examples and real-world scenarios.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-white/60">8 min read</span>
+                            <i class="fas fa-arrow-right text-white/60"></i>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="glass-effect rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer" data-mock="true" data-tags="news">
+                    <!-- Network security monitoring dashboard -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Network security monitoring dashboard" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-xs bg-white/10 px-2 py-1 rounded-full">Industry News</span>
+                            <span class="text-xs text-white/60 ml-3">Dec 5, 2023</span>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">AI in Cybersecurity: 2024 Trends</h3>
+                        <p class="text-white/70 text-sm mb-4">Explore how artificial intelligence is revolutionizing cybersecurity practices and threat detection capabilities.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-white/60">6 min read</span>
+                            <i class="fas fa-arrow-right text-white/60"></i>
+                        </div>
+                    </div>
+                </article>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="glass-effect px-8 py-3 rounded-lg glow-button transition-all duration-300" data-event="click:viewAllPosts">
+                    View All Posts
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Blog Section -->
+
+    <!-- @COMPONENT: Testimonials Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Client Testimonials</h2>
+                <p class="text-xl text-white/70">What industry leaders say about my work</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="glass-effect p-8 rounded-lg" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white/60"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-sm text-white/60">CISO, TechCorp Industries</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"Jaimin's expertise in cybersecurity is unmatched. His penetration testing revealed critical vulnerabilities we never knew existed. Highly recommend his services."</p>
+                    <div class="flex text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-8 rounded-lg" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white/60"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-sm text-white/60">IT Director, FinanceFirst</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"The security training provided by Jaimin transformed our team's approach to cybersecurity. Professional, knowledgeable, and engaging throughout."</p>
+                    <div class="flex text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="glass-effect p-8 rounded-lg" data-mock="true">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white/60"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Emily Rodriguez</h4>
+                            <p class="text-sm text-white/60">Security Manager, DataSecure</p>
+                        </div>
+                    </div>
+                    <p class="text-white/80 mb-4 italic">"Outstanding consultant who helped us achieve compliance and significantly improve our security posture. Results exceeded expectations."</p>
+                    <div class="flex text-yellow-500">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials Section -->
+
+    <!-- @COMPONENT: Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-xl text-white/70">Ready to secure your organization? Let's discuss your cybersecurity needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="glass-effect p-6 rounded-lg flex items-center">
+                            <i class="fas fa-envelope text-2xl text-white/70 mr-6"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-white/70" data-bind="contact.email">jaimin.somani@email.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-6 rounded-lg flex items-center">
+                            <i class="fas fa-phone text-2xl text-white/70 mr-6"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Phone</h4>
+                                <p class="text-white/70" data-bind="contact.phone">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-6 rounded-lg flex items-center">
+                            <i class="fab fa-linkedin text-2xl text-white/70 mr-6"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">LinkedIn</h4>
+                                <p class="text-white/70" data-bind="contact.linkedin">linkedin.com/in/jaimin-somani</p>
+                            </div>
+                        </div>
+                        
+                        <div class="glass-effect p-6 rounded-lg flex items-center">
+                            <i class="fas fa-map-marker-alt text-2xl text-white/70 mr-6"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Location</h4>
+                                <p class="text-white/70" data-bind="contact.location">Available for remote consultations worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Send a Message</h3>
+                    <form class="space-y-6" data-event="submit:handleContactForm">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Full Name</label>
+                            <input type="text" name="name" class="w-full glass-effect rounded-lg px-4 py-3 bg-white/5 border border-white/20 focus:border-white/40 focus:outline-none transition-colors" placeholder="Your name" data-mock="true" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email Address</label>
+                            <input type="email" name="email" class="w-full glass-effect rounded-lg px-4 py-3 bg-white/5 border border-white/20 focus:border-white/40 focus:outline-none transition-colors" placeholder="your.email@company.com" data-mock="true" />
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Subject</label>
+                            <select name="subject" class="w-full glass-effect rounded-lg px-4 py-3 bg-white/5 border border-white/20 focus:border-white/40 focus:outline-none transition-colors" data-mock="true">
+                                <option value="">Select a service</option>
+                                <option value="consultation">Security Consultation</option>
+                                <option value="penetration-testing">Penetration Testing</option>
+                                <option value="training">Security Training</option>
+                                <option value="audit">Security Audit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Message</label>
+                            <textarea name="message" rows="5" class="w-full glass-effect rounded-lg px-4 py-3 bg-white/5 border border-white/20 focus:border-white/40 focus:outline-none transition-colors resize-none" placeholder="Tell me about your cybersecurity needs..." data-mock="true"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full glass-effect px-6 py-3 rounded-lg glow-button transition-all duration-300 hover:bg-white/10 font-medium">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Contact Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold mb-4" data-bind="site.title">Jaimin Somani</h3>
+                    <p class="text-white/70 mb-6">Cybersecurity professional dedicated to protecting organizations from digital threats through expert consulting, training, and security assessments.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-white/60 hover:text-white transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#" class="hover:text-white transition-colors">Security Consulting</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Penetration Testing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Security Training</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Risk Assessment</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-white/70">
+                        <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#blog" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
+                <p>&copy; 2023 Jaimin Somani. All rights reserved. | Built with security in mind.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- @COMPONENT: Gallery Modal -->
+    <div id="galleryModal" class="fixed inset-0 bg-black/90 modal-backdrop z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-full">
+            <button class="absolute -top-12 right-0 text-white text-2xl hover:text-white/70 transition-colors" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-full object-contain rounded-lg" />
+            <div class="glass-effect p-4 mt-4 rounded-lg">
+                <h3 id="modalTitle" class="text-xl font-semibold mb-2"></h3>
+                <p id="modalDescription" class="text-white/70"></p>
+            </div>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: Gallery Modal -->
+
+    <script>
+        (function() {
+            // Gallery modal functionality
+            const modal = document.getElementById('galleryModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+
+            // Add click listeners to gallery items
+            document.querySelectorAll('[data-modal-trigger]').forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const title = this.querySelector('h4').textContent;
+                    const description = this.querySelector('p').textContent;
+                    
+                    modalImage.src = img.src;
+                    modalImage.alt = img.alt;
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            // Close modal function
+            window.closeModal = function() {
+                modal.classList.add('hidden');
+            };
+
+            // Close modal on backdrop click
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Filter functionality for gallery
+            document.querySelectorAll('[data-filter]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update button states
+                    document.querySelectorAll('[data-filter]').forEach(btn => btn.classList.remove('bg-white/10'));
+                    this.classList.add('bg-white/10');
+                    
+                    // Filter gallery items
+                    document.querySelectorAll('[data-category]').forEach(item => {
+                        if (filter === 'all' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Filter functionality for blog
+            document.querySelectorAll('[data-tag]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const tag = this.dataset.tag;
+                    
+                    // Update button states
+                    document.querySelectorAll('[data-tag]').forEach(btn => btn.classList.remove('bg-white/10'));
+                    this.classList.add('bg-white/10');
+                    
+                    // Filter blog posts
+                    document.querySelectorAll('[data-tags]').forEach(item => {
+                        if (tag === 'all' || item.dataset.tags.includes(tag)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Contact form submission
+            document.querySelector('[data-event="submit:handleContactForm"]').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // TODO: Implement form submission logic
+                alert('Thank you for your message! I will get back to you soon.');
+                this.reset();
+            });
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                } else {
+                    navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
