@@ -42,14 +42,10 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <Link key={item.path} href={item.path}>
-                <a
-                  className={`hover:text-white/80 transition-colors duration-300 ${
+              <Link key={item.path} href={item.path} className={`hover:text-white/80 transition-colors duration-300 ${
                     location === item.path ? "text-white" : "text-white/70"
-                  }`}
-                >
+                  }`}>
                   {item.label}
-                </a>
               </Link>
             ))}
           </div>
@@ -70,15 +66,12 @@ export default function Navigation() {
           <div className="md:hidden mt-4 pb-4 glass-effect rounded-lg">
             <div className="flex flex-col space-y-4 px-4 py-4">
               {navItems.map((item) => (
-                <Link key={item.path} href={item.path}>
-                  <a
-                    className={`block hover:text-white/80 transition-colors duration-300 ${
+                <Link key={item.path} href={item.path} className={`block hover:text-white/80 transition-colors duration-300 ${
                       location === item.path ? "text-white" : "text-white/70"
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
-                  </a>
                 </Link>
               ))}
             </div>
